@@ -1,0 +1,27 @@
+<template name="allUsers">
+  <h1>All Users</h1>
+  <ul class="list-group">
+    {{#each users}}
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-xs-3">
+            <strong>Name: </strong>{{name}}
+          </div>
+          <div class="col-xs-3">
+            <strong>Age: </strong>{{age}}
+          </div>
+          <div class="col-xs-3">
+            {{#if isActive}}
+              Active
+            {{else}}
+              Inactive
+            {{/if}}
+          </div>
+          <div class="col-xs-3 text-right">
+            <a href="/edit/{{_id}}" class="btn btn-primary">Edit</a>
+          </div>
+        </div>
+      </li>
+    {{/each}}
+  </ul>
+</template>
